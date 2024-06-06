@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: lizer-capitol
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username:
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  h2:
+    console.enabled: true
+  profiles:
+    active: standalone
+
+hibernate:
+  hbm2ddl:
+    auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+app:
+  version: @project.version@
+
+server:
+  port: 8090
+  servlet:
+    contextPath: "/capitol"

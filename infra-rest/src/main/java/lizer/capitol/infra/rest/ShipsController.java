@@ -1,15 +1,13 @@
 package lizer.capitol.infra.rest;
 
 
-import jakarta.websocket.server.PathParam;
 import lizer.capitol.application.usecase.ship.ShipUseCase;
-import lizer.capitol.domain.exceptions.InvalidParameterException;
 import lizer.capitol.domain.entities.Ship;
+import lizer.capitol.domain.exceptions.InvalidParameterException;
 import lizer.capitol.infra.rest.mapper.ShipMapper;
 import lizer.capitol.infra.rest.model.ShipDTO;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -130,7 +128,7 @@ public class ShipsController {
   @DeleteMapping(
       path = "/{id}"
   )
-  public ResponseEntity<ShipDTO> deleteShip(@NotNull @PathParam(value = "id") Long id) {
+  public ResponseEntity<ShipDTO> deleteShip(@NotNull @PathVariable(value = "id") Long id) {
     paramsCheck(id);
     shipUseCase.deleteShip(id);
     return ResponseEntity.noContent().build();

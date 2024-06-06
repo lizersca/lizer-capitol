@@ -137,18 +137,21 @@ public class ShipsController {
   private void paramsCheck(Integer page, Integer size) {
     if (page != null && page < 0) {
       throw new InvalidParameterException(
-          InvalidParameterException.ParameterEnum.PAGE, "PAGE: " + INVALID_VALUE_MESSAGE);
+          InvalidParameterException.ParameterEnum.PAGE,
+          INVALID_VALUE_MESSAGE + ": " + InvalidParameterException.ParameterEnum.PAGE);
     }
     if (size != null && size < 1) {
       throw new InvalidParameterException(
-          InvalidParameterException.ParameterEnum.SIZE, "SIZE: " + INVALID_VALUE_MESSAGE);
+          InvalidParameterException.ParameterEnum.SIZE,
+          INVALID_VALUE_MESSAGE + ": " + InvalidParameterException.ParameterEnum.SIZE);
     }
   }
 
   private void paramsCheck(Long id) {
     if (id < 0) {
       throw new InvalidParameterException(
-          InvalidParameterException.ParameterEnum.ID, "ID: " + INVALID_VALUE_MESSAGE);
+          InvalidParameterException.ParameterEnum.ID,
+          INVALID_VALUE_MESSAGE + ": " + InvalidParameterException.ParameterEnum.ID);
     }
   }
 }

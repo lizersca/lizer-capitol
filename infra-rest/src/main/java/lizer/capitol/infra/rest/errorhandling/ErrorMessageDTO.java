@@ -1,11 +1,12 @@
 package lizer.capitol.infra.rest.errorhandling;
 
-import lombok.Builder;
+import lombok.Getter;
 
 import java.util.Arrays;
 
 import static java.util.Objects.nonNull;
 
+@Getter
 public class ErrorMessageDTO {
 
   String description;
